@@ -1,0 +1,9 @@
+ERROR:rclstream.config:❌ Missing credentials file /home/mahdi.abootorabi/EchoFAR/Lingshu/.env and no environment variables are set.
+Traceback (most recent call last):
+  File "/home/mahdi.abootorabi/EchoFAR/Lingshu/test_lingshu_one_sample.py", line 4, in <module>
+    from rclstream.datasets.private import echo
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/rclstream/__init__.py", line 1, in <module>
+    from . import config
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/rclstream/config.py", line 41, in <module>
+    raise EnvironmentError(
+OSError: Missing .env file. Please create one in the project root or set the environment variables.

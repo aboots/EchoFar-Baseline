@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --job-name=echo_qwen3
+#SBATCH --partition=mig
+#SBATCH --nodelist=rcl-nv2.ece.ubc.ca
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=48G
+#SBATCH --time=48:00:00
+#SBATCH --output=logs/inference_%j.log
+#SBATCH --error=logs/inference_%j.err
+
+# Load Conda environment
+source /home/mahdi.abootorabi/miniconda3/etc/profile.d/conda.sh
+conda activate echofar
+
+# Ensure weights and datasets can be found
+export PYTHONPATH=$PYTHONPATH:/home/mahdi.abootorabi/EchoFAR
+
+echo "Starting Echo Inference at $(date)"
+echo "Job ID: $SLURM_JOB_ID"
+echo "Node: $SLURM_NODELIST"
+
+# Run the inference script
+python /home/mahdi.abootorabi/EchoFAR/inference_echo.py
+
+echo "Finished Echo Inference at $(date)"

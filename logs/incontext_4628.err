@@ -1,0 +1,30 @@
+INFO:rclstream.config:📄 Loading credentials from /home/mahdi.abootorabi/EchoFAR/.env
+INFO:rclstream.config:✅ Chinook S3 connection successful
+INFO:rclstream.config:✅ Database connection successful
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/lingshu-medical-mllm/Lingshu-7B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lingshu-medical-mllm/Lingshu-7B/b98aecd41dfd9d7545a6b8e2f4743ae8471bd7a9/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/lingshu-medical-mllm/Lingshu-7B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/lingshu-medical-mllm/Lingshu-7B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/lingshu-medical-mllm/Lingshu-7B/b98aecd41dfd9d7545a6b8e2f4743ae8471bd7a9/model.safetensors.index.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/lingshu-medical-mllm/Lingshu-7B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 17385.72it/s]
+Traceback (most recent call last):
+  File "/home/mahdi.abootorabi/EchoFAR/Lingshu/inference_incontext.py", line 305, in <module>
+    main()
+  File "/home/mahdi.abootorabi/EchoFAR/Lingshu/inference_incontext.py", line 101, in main
+    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4054, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1425, in __init__
+    super().__init__(config)
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1261, in __init__
+    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1856, in _check_and_adjust_attn_implementation
+    applicable_attn_implementation = self.get_correct_attn_implementation(
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1897, in get_correct_attn_implementation
+    self._flash_attn_2_can_dispatch(is_init_check)
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1573, in _flash_attn_2_can_dispatch
+    raise ValueError(
+ValueError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: Flash Attention 2 is not available on CPU. Please make sure torch can access a CUDA device.

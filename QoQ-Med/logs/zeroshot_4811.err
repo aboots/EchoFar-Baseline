@@ -1,0 +1,22 @@
+INFO:rclstream.config:📄 Loading credentials from /home/mahdi.abootorabi/EchoFAR/QoQ-Med/.env
+INFO:rclstream.config:✅ Chinook S3 connection successful
+INFO:rclstream.config:✅ Database connection successful
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/ddvd233/QoQ-Med-VL-7B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ddvd233/QoQ-Med-VL-7B/aedfc42114c42fed85e5eef91466131e9597d750/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/ddvd233/QoQ-Med-VL-7B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/ddvd233/QoQ-Med-VL-7B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/ddvd233/QoQ-Med-VL-7B/aedfc42114c42fed85e5eef91466131e9597d750/model.safetensors.index.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/ddvd233/QoQ-Med-VL-7B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 6981.78it/s]
+Traceback (most recent call last):
+  File "/home/mahdi.abootorabi/EchoFAR/QoQ-Med/inference_zeroshot.py", line 275, in <module>
+    main()
+  File "/home/mahdi.abootorabi/EchoFAR/QoQ-Med/inference_zeroshot.py", line 101, in main
+    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4096, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+  File "/home/mahdi.abootorabi/miniconda3/envs/echofar/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4203, in _load_pretrained_model
+    file_pointer = safe_open(file, framework="pt", device="cpu")
+RuntimeError: unable to mmap 2262587120 bytes from file </home/mahdi.abootorabi/.cache/huggingface/hub/models--ddvd233--QoQ-Med-VL-7B/snapshots/aedfc42114c42fed85e5eef91466131e9597d750/model-00004-of-00004.safetensors>: Cannot allocate memory (12)

@@ -89,3 +89,12 @@ node_modules/
 dist/
 build/
 coverage/
+
+# --- Data, experiment outputs, and generated metrics ---
+*.csv
+*.json
+
+# --- Debug / local scratch ---
+debug/
+*.log.debug
+.pytest_cache/
